@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.util.Locale;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText mHeightEditText;
@@ -24,11 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        new AlertDialog.Builder(this)
-                .setTitle("Title")
-                .setMessage("Message")
-                .setPositiveButton(android.R.string.ok, null)
-                .show();
+        startCalculation();
     }
 
     private void findViews() {
@@ -41,8 +39,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mCalculateBmiButton.setOnClickListener(this);
     }
 
+    private void startCalculation() {
+        String heightText = mHeightEditText.getText().toString();
+        String weightText = mWeightEditText.getText().toString();
+
+        int height = Integer.parseInt(heightText);
+        int weight = Integer.parseInt(weightText);
+
+        double bmi = calcBMI(height, weight);
+        String bmiText = String.format(Locale.getDefault(), "%f", bmi);
+
+        new AlertDialog.Builder(this)
+                .setTitle("Your BMI")
+                .setMessage(bmiText)
+                .setPositiveButton(android.R.string.ok, null)
+                .show();
+    }
+
     private static Double calcBMI(int heightCm, int weightKg) {
-        double heightM = heightCm / 100;
+        double heightM = (double) heightCm / 100;
 
         // BMI＝ 体重kg ÷ (身長m)^2
         double bmi = weightKg / Math.pow(heightM, 2);

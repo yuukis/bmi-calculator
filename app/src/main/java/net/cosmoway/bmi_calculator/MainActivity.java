@@ -40,4 +40,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void setListeners() {
         mCalculateBmiButton.setOnClickListener(this);
     }
+
+    private static Double calcBMI(int heightCm, int weightKg) {
+        double heightM = heightCm / 100;
+
+        // BMI＝ 体重kg ÷ (身長m)^2
+        double bmi = weightKg / Math.pow(heightM, 2);
+
+        return bmi;
+    }
 }

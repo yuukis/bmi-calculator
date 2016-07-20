@@ -11,7 +11,65 @@
         tools:context="net.cosmoway.bmi_calculator.MainActivity">
 
     <TextView
-            android:text="Hello World!"
+            android:text="Height"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:id="@+id/textview_height"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/edittext_height"
+            android:layout_below="@+id/textview_height"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@+id/textview_cm"
+            android:layout_toLeftOf="@+id/textview_cm"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Weight"
+            android:id="@+id/textview_weight"
+            android:layout_below="@+id/edittext_height"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="20dp"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/edittext_weight"
+            android:layout_below="@+id/textview_weight"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_toLeftOf="@+id/textview_cm"
+            android:layout_toStartOf="@+id/textview_cm"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="cm"
+            android:id="@+id/textview_cm"
+            android:layout_alignBottom="@+id/edittext_height"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="kg"
+            android:id="@+id/textview_kg"
+            android:layout_alignBottom="@+id/edittext_weight"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calculate BMI"
+            android:id="@+id/button_calculate_bmi"
+            android:layout_below="@+id/edittext_weight"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp"/>
 </RelativeLayout>

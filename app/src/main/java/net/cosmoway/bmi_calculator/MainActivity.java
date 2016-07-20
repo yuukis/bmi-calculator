@@ -1,5 +1,6 @@
 package net.cosmoway.bmi_calculator;
 
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -23,7 +24,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-
+        new AlertDialog.Builder(this)
+                .setTitle("Title")
+                .setMessage("Message")
+                .setPositiveButton(android.R.string.ok, null)
+                .show();
     }
 
     private void findViews() {

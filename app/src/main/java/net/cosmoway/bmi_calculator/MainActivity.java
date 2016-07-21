@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .show();
     }
 
-    private static double calcBMI(int heightCm, int weightKg) {
+    protected static double calcBMI(int heightCm, int weightKg) {
         double heightM = (double) heightCm / 100;
 
         // BMI＝ 体重kg ÷ (身長m)^2
